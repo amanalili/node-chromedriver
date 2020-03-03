@@ -278,7 +278,7 @@ async function extractDownload(dirToExtractTo) {
   }
   console.log('Extracting zip contents');
   try {
-    await extractZip(path.resolve(downloadedFile), { dir: dirToExtractTo });
+    await extractZip(path.resolve(downloadedFile), { dir: path.resolve(dirToExtractTo) });
   } catch (error) {
     throw new Error('Error extracting archive: ' + error);
   }
